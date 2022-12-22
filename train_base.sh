@@ -1,7 +1,7 @@
 #!/bin/sh
 PARTITION=Segmentation
 
-GPU_ID=0,1,2,3
+GPU_ID=0
 dataset=coco # pascal coco
 exp_name=split0
 
