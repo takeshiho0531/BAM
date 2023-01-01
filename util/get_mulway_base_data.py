@@ -32,7 +32,7 @@ from util import get_train_val_set, check_makedirs
 parser = argparse.ArgumentParser()
 args = parser.parse_args()
 
-args.data_set = 'pascal'  # pascal coco
+args.data_set = 'coco'  # pascal coco
 args.use_split_coco = True
 args.mode = 'train'       # train val
 args.split = 0            # 0 1 2 3
@@ -42,7 +42,7 @@ elif args.data_set == 'coco':
     num_classes = 80
 
 root_path = '/disk2/lcb/study/FS_Seg/'
-data_path = osp.join(root_path, 'data/base_annotation/')
+data_path = osp.join(root_path, '/app/data/base_annotation/') #path変更
 save_path = osp.join(data_path, args.data_set, args.mode, str(args.split))
 check_makedirs(save_path)
 
