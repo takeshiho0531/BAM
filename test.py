@@ -75,7 +75,7 @@ def get_model(args):
             # create new OrderedDict that does not contain `module.`
             from collections import OrderedDict
             new_state_dict = OrderedDict()
-            for k, v in old_checkpoint.items():
+            for k, v in old_checkpoint["state_dict"].items():
                 name = k[7:] # remove `module.`
                 new_state_dict[name] = v
             # load params
