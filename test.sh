@@ -8,7 +8,7 @@ exp_name=split0
 arch=BAM
 net=resnet50 # vgg resnet50
 
-exp_dir=/app/BAM/exp/${dataset}/${arch}/${exp_name}/${net} 
+exp_dir=/app/BAM/exp/${dataset}/${arch}/${exp_name}/${net} #path変更してます。
 snapshot_dir=${exp_dir}/snapshot
 result_dir=${exp_dir}/result
 config=config/${dataset}/${dataset}_${exp_name}_${net}.yaml
