@@ -70,7 +70,17 @@ def get_model(args):
         weight_path = osp.join(args.snapshot_path, args.weight)
         if os.path.isfile(weight_path):
             logger.info("=> loading checkpoint '{}'".format(weight_path))
-            checkpoint = torch.load(weight_path, map_location=torch.device('cpu'))
+            
+            old_checkpoint = torch.load(weight_path, map_location=torch.device('cpu')) #変更。読み込みファイルのstate_dictのkeyの先頭のmodeule.を除きたい。(配布されたやつはあった)
+            # create new OrderedDict that does not contain `module.`
+            from collections import OrderedDict
+            new_state_dict = OrderedDict()
+            for k, v in state_dict.items():
+                name = k[7:] # remove `module.`
+                new_state_dict[name] = v
+            # load params
+            checkpoint=model.load_state_dict(new_state_dict, map_location=torch.device('cpu')) #ここまで変更加えた。
+
             args.start_epoch = checkpoint['epoch']
             new_param = checkpoint['state_dict']
             try: 
