@@ -79,7 +79,7 @@ def get_model(args):
                 name = k[7:] # remove `module.`
                 new_state_dict[name] = v
             # load params
-            checkpoint=model.load_state_dict(torch.load(new_state_dict), map_location=torch.device('cpu')) #ここまで変更加えた。
+            checkpoint=model.load_state_dict(torch.load(new_state_dict, map_location=torch.device('cpu'))) #ここまで変更加えた。
 
             args.start_epoch = checkpoint['epoch']
             new_param = checkpoint['state_dict']
