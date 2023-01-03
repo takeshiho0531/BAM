@@ -201,8 +201,8 @@ def get_logger():
 
 def get_save_path(args):
     backbone_str = 'vgg' if args.vgg else 'resnet'+str(args.layers)
-    args.snapshot_path = 'exp/{}/{}/split{}/{}/snapshot'.format(args.data_set, args.arch, args.split, backbone_str)
-    args.result_path = 'exp/{}/{}/split{}/{}/result'.format(args.data_set, args.arch, args.split, backbone_str)
+    args.snapshot_path = '/app/BAM/exp/{}/{}/split{}/{}/snapshot'.format(args.data_set, args.arch, args.split, backbone_str)
+    args.result_path = '/app/BAM/exp/{}/{}/split{}/{}/result'.format(args.data_set, args.arch, args.split, backbone_str)
 
 def get_train_val_set(args):
     if args.data_set == 'pascal':
