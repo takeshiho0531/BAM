@@ -77,9 +77,9 @@ def get_model(args):
             args.start_epoch = checkpoint['epoch']
             new_param = checkpoint['state_dict']
             try: 
-                for key in list(new_param.keys()):
-                    new_param[key[7:]] = new_param.pop(key)
-                model.load_state_dict(new_param)
+                #for key in list(new_param.keys()):
+                    #new_param[key[7:]] = new_param.pop(key)
+                #model.load_state_dict(new_param)
             except RuntimeError:                   # 1GPU loads mGPU model
                 for key in list(new_param.keys()):
                     new_param[key[7:]] = new_param.pop(key)
