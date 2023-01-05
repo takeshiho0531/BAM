@@ -22,5 +22,5 @@ echo ${config}
 CUDA_VISIBLE_DEVICES=${GPU_ID} python3 -m torch.distributed.launch --nproc_per_node=4 --master_port=1234 mode.py \
         --config=${config} \
         --arch=${arch} \
-        2>&1 | tee ${result_dir}/train-$now.log
+        2>&1 | tee ${result_dir}/mode-$now.log
 
