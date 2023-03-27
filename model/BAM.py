@@ -180,6 +180,9 @@ class OneModel(nn.Module):
         bs = x_size[0]
         h = int((x_size[2] - 1) / 8 * self.zoom_factor + 1)
         w = int((x_size[3] - 1) / 8 * self.zoom_factor + 1)
+        print("x_size: ", x.size)
+        print("s_x_size: ", s_x.shape)
+        print("s_y_size: ", s_y.shape)
 
         # Query Feature
         with torch.no_grad():
