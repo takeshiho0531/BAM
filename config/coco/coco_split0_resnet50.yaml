@@ -19,7 +19,7 @@ Train:
   padding_label: 255
   # Dataset & Mode
   split: 0
-  shot: 8    #k-shot learningのkに合わせて変更しないといけない。
+  shot: 6   #k-shot learningのkに合わせて変更しないといけない。
   data_set: 'coco'
   use_split_coco: True # True means FWB setting
   # Optimizer
